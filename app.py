@@ -102,7 +102,7 @@ def calculate_interval(student_id: str, question: Question) -> timedelta:
     pq_factor = 1 + (pq[-1].score/100 if pq else 0)
     misconception_penalty = 1 + len(MISCONCEPTION_GRAPH.get((student_id, question.topic), []))
     interval = mem_data["stability"] * pq_factor / misconception_penalty
-    return timedelta(hours=max(1, min(720, interval * 24))
+    return timedelta(hours=max(1, min(720, interval * 24)))
 
 # -----------------------------
 # Enhanced Endpoints
